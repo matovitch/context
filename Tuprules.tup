@@ -1,0 +1,17 @@
+ROOT = $(TUP_CWD)
+CC = g++
+
+CFLAGS  = 
+CFLAGS += -Wall
+CFLAGS += -pedantic
+CFLAGS += -std=c++14
+
+ifeq (@(TUP_DEBUG),y)
+CFLAGS += -g
+else
+CFLAGS += -O3
+endif
+
+CFLAGS += -I $(ROOT)/include 
+
+!cc = |> $(CC) $(CFLAGS) -c %f -o %o |> %B.o
