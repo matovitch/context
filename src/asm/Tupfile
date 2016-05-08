@@ -1,0 +1,5 @@
+ASM  = jump_x86_64_sysv_elf_gas.S
+ASM += make_x86_64_sysv_elf_gas.S 
+ASM += ontop_x86_64_sysv_elf_gas.S
+
+: foreach $(ASM) |> as %f --64 -o %o |> %B.o <asm>

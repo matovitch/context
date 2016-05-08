@@ -12,6 +12,6 @@ else
 CFLAGS += -O3
 endif
 
-CFLAGS += -I $(ROOT)/include 
+INCLUDES += -I $(ROOT)/include 
 
-!cc = |> $(CC) $(CFLAGS) -c %f -o %o |> %B.o
+!cc = |> $(CC) $(CFLAGS) $(INCLUDES) -c %f -o %o |> %B.o
